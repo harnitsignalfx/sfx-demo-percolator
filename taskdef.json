@@ -1,0 +1,16 @@
+{
+    "family": "percolator-test",
+    "containerDefinitions": [
+        {
+            "image": "harnit/percolator-auto-test:v_%BUILD_NUMBER%",
+            "name": "docs-processing-container",
+            "cpu": 2,
+            "memory": 100,
+            "essential": true,
+            "environment": [
+            	{ "name" : "SF_TOKEN", "value" : "%TOKEN_VALUE%" },
+            	{ "name" : "USER_DIM", "value" : "${GIT_COMMITTER_EMAIL}" }
+            ]
+        }
+    ]
+}
